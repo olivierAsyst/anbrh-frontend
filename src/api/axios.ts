@@ -19,9 +19,17 @@ API.interceptors.response.use(
     (response) => response,
     async (error) => {
         const originalRequest = error.config;
+        if(!error.response){
+            alert("Le serveur est indisponible. Veuillez réessayer plus tard.")
+        }
+        const isAuthRoute =
+            originalRequest.url?.includes('/v1/auth/login') ||
+            originalRequest.url?.includes('/v1/auth/register') ||
+            originalRequest.url?.includes('/v1/auth/refresh')
         if(
             error.response?.status === 401 &&
-            !originalRequest._retry
+            !originalRequest._retry &&
+            !isAuthRoute
         ){
             originalRequest._retry = true
             try {
