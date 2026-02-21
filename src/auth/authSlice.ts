@@ -1,6 +1,5 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit"
 import type { AuthUser } from "../type/auth"
-import { jwtDecode } from "jwt-decode"
 
 interface AuthState{
     accessToken: string | null
