@@ -3,12 +3,10 @@ import type { ApiResponse, AuthResponse, RegisterRequest } from "../type/auth";
 
 const registerUser = async (data: RegisterRequest) => {
     const response = await API.post<ApiResponse<AuthResponse>>(
-        '/auth/register',
+        '/v1/auth/register',
         data
     )
     return response.data
 }
 
-export default {
-    registerUser
-}
+export default registerUser

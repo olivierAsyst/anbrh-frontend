@@ -6,6 +6,9 @@ const Home = () => {
   const openLogin = () =>{
     navigate("/login")
   }
+  const openRegister = () =>{
+    navigate("/register")
+  }
   return (
     <div className="hero bg-base-200 min-h-screen">
         <div className="hero-content flex-col lg:flex-row">
@@ -19,7 +22,10 @@ const Home = () => {
                 Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
                 quasi. In deleniti eaque aut repudiandae et a id nisi.
             </p>
-            <button onClick={openLogin} className="btn bg-violet-700 text-white">Connectez vous</button>
+            <div className="flex gap-2">
+              <button onClick={openLogin} className="btn bg-violet-700 text-white">Connectez vous</button>
+              <button onClick={openRegister} className="btn bg-violet-700 text-white">Creer un compte</button>
+            </div>
             </div>
         </div>    
     </div>

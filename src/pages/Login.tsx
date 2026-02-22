@@ -67,6 +67,7 @@ const Login = () => {
     }
 
   return (
+    <div className="min-h-screen flex justify-center items-center">
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
         <legend className="fieldset-legend">Login</legend>
         {messageError && (
@@ -91,6 +92,7 @@ const Login = () => {
         />
         <button className="btn bg-violet-700 text-white mt-4" onClick={handleSubmit}>Login</button>
     </fieldset>
+    </div>
   )
 }
 
